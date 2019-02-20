@@ -66,7 +66,7 @@ feather52832_narc.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3 -Os
 #**********************************************
 # Nordic nRF52832DK (PCA10040)
 #**********************************************
-pca10040.name=NARC nRF52DK (PCA10040)
+pca10040.name=NARC PCA10040 (nRF52832DK)
 pca10040.bootloader.tool=bootburn
 
 # Upload
