@@ -105,3 +105,46 @@ pca10040.menu.debug.l2=Level 2 (Full Debug)
 pca10040.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2 -Os
 pca10040.menu.debug.l3=Level 3 (Segger SystemView)
 pca10040.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3 -Os
+
+#**********************************************
+# Bluefruit Feather nRF52832 Board
+#**********************************************
+narc_amulet_proto0.name=NARC Amulet Proto0
+narc_amulet_proto0.bootloader.tool=bootburn
+
+# Upload
+narc_amulet_proto0.upload.tool=nrfutil
+narc_amulet_proto0.upload.protocol=nrfutil
+narc_amulet_proto0.upload.use_1200bps_touch=false
+narc_amulet_proto0.upload.wait_for_upload_port=false
+narc_amulet_proto0.upload.native_usb=false
+
+# Build
+narc_amulet_proto0.build.mcu=cortex-m4
+narc_amulet_proto0.build.f_cpu=64000000
+narc_amulet_proto0.build.board=NARC_AMULET_PROTO0
+narc_amulet_proto0.build.core=nRF5
+narc_amulet_proto0.build.variant=narc_amulet_proto0
+narc_amulet_proto0.build.extra_flags=-DNRF52832_XXAA -DNRF52
+
+# SofDevice Menu
+# Ram & ROM size varies depending on SoftDevice (check linker script)
+
+narc_amulet_proto0.menu.softdevice.s132v6=0.2.7 (s132 6.1.1)
+narc_amulet_proto0.menu.softdevice.s132v6.build.sd_flags=-DS132
+narc_amulet_proto0.menu.softdevice.s132v6.build.sd_name=s132
+narc_amulet_proto0.menu.softdevice.s132v6.build.sd_version=6.1.1
+narc_amulet_proto0.menu.softdevice.s132v6.build.sd_fwid=0x00B7
+narc_amulet_proto0.menu.softdevice.s132v6.build.ldscript=nrf52832_s132_v6.ld
+narc_amulet_proto0.menu.softdevice.s132v6.upload.maximum_size=290816
+narc_amulet_proto0.menu.softdevice.s132v6.upload.maximum_data_size=51072
+
+# Debug Menu
+narc_amulet_proto0.menu.debug.l0=Level 0 (Release)
+narc_amulet_proto0.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0 -Os
+narc_amulet_proto0.menu.debug.l1=Level 1 (Error Message)
+narc_amulet_proto0.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1 -Os
+narc_amulet_proto0.menu.debug.l2=Level 2 (Full Debug)
+narc_amulet_proto0.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2 -Os
+narc_amulet_proto0.menu.debug.l3=Level 3 (Segger SystemView)
+narc_amulet_proto0.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3 -Os
