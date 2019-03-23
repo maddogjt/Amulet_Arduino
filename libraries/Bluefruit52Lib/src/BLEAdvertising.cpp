@@ -318,15 +318,15 @@ bool BLEAdvertising::isRunning(void)
   return _runnning;
 }
 
-bool BLEAdvertising::setBeacon(BLEBeacon& beacon)
-{
-  return beacon.start(*this);
-}
+// bool BLEAdvertising::setBeacon(BLEBeacon& beacon)
+// {
+//   return beacon.start(*this);
+// }
 
-bool BLEAdvertising::setBeacon(EddyStoneUrl& eddy_url)
-{
-  return eddy_url.start();
-}
+// bool BLEAdvertising::setBeacon(EddyStoneUrl& eddy_url)
+// {
+//   return eddy_url.start();
+// }
 
 void BLEAdvertising::restartOnDisconnect(bool enable)
 {
@@ -359,9 +359,15 @@ bool BLEAdvertising::_start(uint16_t interval, uint16_t timeout)
       .adv_data      = { .p_data = _data, .len = _count },
       .scan_rsp_data = { .p_data = Bluefruit.ScanResponse.getData(), .len = Bluefruit.ScanResponse.count() }
   };
+
+  // enum
+  // {
+  //   CONN_CFG_PERIPHERAL = 1,
+  //   CONN_CFG_CENTRAL = 2,
+  // };
   VERIFY_STATUS( sd_ble_gap_adv_set_configure(&_hdl, &gap_adv, &adv_para), false );
   VERIFY_STATUS( sd_ble_gap_tx_power_set(BLE_GAP_TX_POWER_ROLE_ADV, _hdl, Bluefruit.getTxPower() ), false );
-  VERIFY_STATUS( sd_ble_gap_adv_start(_hdl, CONN_CFG_PERIPHERAL), false );
+  VERIFY_STATUS( sd_ble_gap_adv_start(_hdl, 1 /* CONN_CFG_PERIPHERAL */), false );
 
   Bluefruit._startConnLed(); // start blinking
   _runnning        = true;
@@ -415,14 +421,14 @@ void BLEAdvertising::_eventHandler(ble_evt_t* evt)
     break;
 
     case BLE_GAP_EVT_DISCONNECTED:
-      if ( BLE_GAP_ROLE_PERIPH == Bluefruit.Gap.getRole(evt->evt.common_evt.conn_handle) )
-      {
-        // Turn off Conn LED
-        Bluefruit._setConnLed(false);
+      // if ( BLE_GAP_ROLE_PERIPH == Bluefruit.Gap.getRole(evt->evt.common_evt.conn_handle) )
+      // {
+      //   // Turn off Conn LED
+      //   Bluefruit._setConnLed(false);
 
-        // Auto start if enabled
-        if ( _start_if_disconnect ) start(_stop_timeout);
-      }
+      //   // Auto start if enabled
+      //   if ( _start_if_disconnect ) start(_stop_timeout);
+      // }
     break;
 
     case BLE_GAP_EVT_ADV_SET_TERMINATED:

@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map For Adafruit Bluefruit nrf52
+# Syntax Coloring Map For  NARC nrf52
 #######################################
 
 #######################################

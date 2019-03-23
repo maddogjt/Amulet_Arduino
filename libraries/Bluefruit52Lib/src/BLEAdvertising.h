@@ -43,9 +43,6 @@
 #include "BLEUuid.h"
 #include "BLEService.h"
 
-#include "services/BLEBeacon.h"
-#include "services/EddyStone.h"
-
 /* Advertising Guideline from Apple
  * https://developer.apple.com/library/content/qa/qa1931/_index.html
  *
@@ -130,9 +127,6 @@ public:
   void setIntervalMS(uint16_t fast, uint16_t slow);
 
   uint16_t getInterval(void);
-
-  bool setBeacon(BLEBeacon& beacon);
-  bool setBeacon(EddyStoneUrl& eddy_url);
 
   bool isRunning(void);
 
