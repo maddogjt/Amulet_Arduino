@@ -244,16 +244,6 @@ bool BLEScanner::checkReportForUuid(const ble_gap_evt_adv_report_t* report, BLEU
   return false;
 }
 
-bool BLEScanner::checkReportForService(const ble_gap_evt_adv_report_t* report, BLEClientService& svc)
-{
-  return checkReportForUuid(report, svc.uuid);
-}
-
-bool BLEScanner::checkReportForService(const ble_gap_evt_adv_report_t* report, BLEService& svc)
-{
-  return checkReportForUuid(report, svc.uuid);
-}
-
 void BLEScanner::filterRssi(int8_t min_rssi)
 {
   _filter_rssi = min_rssi;
@@ -292,16 +282,6 @@ void BLEScanner::filterUuid(BLEUuid ble_uuid[], uint8_t count)
   _filter_uuid = new BLEUuid[count];
 
   for(uint8_t i=0; i<count; i++) _filter_uuid[i] = ble_uuid[i];
-}
-
-void BLEScanner::filterService(BLEService& svc)
-{
-  filterUuid(svc.uuid);
-}
-
-void BLEScanner::filterService(BLEClientService& cli)
-{
-  filterUuid(cli.uuid);
 }
 
 void BLEScanner::filterMSD(uint16_t manuf_id)

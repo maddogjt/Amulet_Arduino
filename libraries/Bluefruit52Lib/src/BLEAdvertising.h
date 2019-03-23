@@ -38,10 +38,8 @@
 
 #include <Arduino.h>
 #include "bluefruit_common.h"
-#include "BLEClientService.h"
 
 #include "BLEUuid.h"
-#include "BLEService.h"
 
 /* Advertising Guideline from Apple
  * https://developer.apple.com/library/content/qa/qa1931/_index.html
@@ -90,15 +88,6 @@ public:
   bool addUuid(BLEUuid bleuuid1, BLEUuid bleuuid2, BLEUuid bleuuid3, BLEUuid bleuuid4);
 
   bool addUuid(BLEUuid bleuuid[], uint8_t count);
-
-  /*------------- Service -------------*/
-  bool addService(BLEService& service);
-  bool addService(BLEService& service1, BLEService& service2);
-  bool addService(BLEService& service1, BLEService& service2, BLEService& service3);
-  bool addService(BLEService& service1, BLEService& service2, BLEService& service3, BLEService& service4);
-
-  /*------------- Client Service -------------*/
-  bool addService(BLEClientService& service);
 
   // Functions to work with the raw advertising packet
   uint8_t  count(void);

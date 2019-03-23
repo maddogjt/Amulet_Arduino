@@ -68,9 +68,6 @@ public:
   void filterUuid(BLEUuid ble_uuid1, BLEUuid ble_uuid2, BLEUuid ble_uuid3, BLEUuid ble_uuid4);
   void filterUuid(BLEUuid ble_uuid[], uint8_t count);
 
-  void filterService(BLEService& svc);
-  void filterService(BLEClientService& cli);
-
   void clearFilters(void);
 
   bool start(uint16_t timeout = 0);
@@ -86,8 +83,6 @@ public:
   uint8_t parseReportByType(const ble_gap_evt_adv_report_t* report, uint8_t type, uint8_t* buf, uint8_t bufsize = 0);
 
   bool    checkReportForUuid(const ble_gap_evt_adv_report_t* report, BLEUuid ble_uuid);
-  bool    checkReportForService(const ble_gap_evt_adv_report_t* report, BLEClientService& svc);
-  bool    checkReportForService(const ble_gap_evt_adv_report_t* report, BLEService& svc);
 
   /*------------------------------------------------------------------*/
   /* INTERNAL USAGE ONLY

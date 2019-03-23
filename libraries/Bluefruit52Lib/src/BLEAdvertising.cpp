@@ -126,48 +126,6 @@ bool BLEAdvertisingData::addUuid(BLEUuid bleuuid[], uint8_t count)
 }
 
 /*------------------------------------------------------------------*/
-/* Adding Service's UUID
- *------------------------------------------------------------------*/
-bool BLEAdvertisingData::addService(BLEService& service)
-{
-  return addUuid(service.uuid);
-}
-
-bool BLEAdvertisingData::addService(BLEService& service1, BLEService& service2)
-{
-  return addUuid(service1.uuid, service2.uuid);
-}
-
-bool BLEAdvertisingData::addService(BLEService& service1, BLEService& service2, BLEService& service3)
-{
-  return addUuid(service1.uuid, service2.uuid, service3.uuid);
-}
-
-bool BLEAdvertisingData::addService(BLEService& service1, BLEService& service2, BLEService& service3, BLEService& service4)
-{
-  return addUuid(service1.uuid, service2.uuid, service3.uuid, service4.uuid);
-}
-
-bool BLEAdvertisingData::addService(BLEClientService& service)
-{
-  // Central service is added to Solicitation UUID
-  switch ( service.uuid.size() )
-  {
-    case 16:
-      return addData(BLE_GAP_AD_TYPE_SOLICITED_SERVICE_UUIDS_16BIT, &service.uuid._uuid.uuid, 2);
-    break;
-
-    case 128:
-      return addData(BLE_GAP_AD_TYPE_SOLICITED_SERVICE_UUIDS_128BIT, service.uuid._uuid128, 16);
-    break;
-
-    default: break;
-  }
-
-  return false;
-}
-
-/*------------------------------------------------------------------*/
 /* Adding Others
  *------------------------------------------------------------------*/
 

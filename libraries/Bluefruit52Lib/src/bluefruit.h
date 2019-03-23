@@ -49,7 +49,6 @@
 
 #include "BLEUuid.h"
 #include "BLEAdvertising.h"
-#include "BLEService.h"
 
 #include "BLEScanner.h"
 
