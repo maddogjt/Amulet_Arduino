@@ -1,16 +1,15 @@
-# Arduino Core for Adafruit Bluefruit nRF52 Boards
+# Arduino Core for NARC nRF52 Boards
 
-This repository contains the Arduino BSP for Adafruit nRF52 series:
+This repository contains the Arduino BSP for NARC nRF52 series:
 
+- Amulet Proto0
 - [Bluefruit Feather nRF52832](https://www.adafruit.com/product/3406)
-- [Bluefruit Feather nRF52840](https://www.adafruit.com/product/4062)
-- [Noric nRF52840DK PCA10056](https://www.nordicsemi.com/eng/Products/nRF52840-DK)
 
 ## BSP Installation
 
 There are two methods that you can use to install this BSP. We highly recommend the first option unless you wish to participate in active development of this codebase via Github.
 
-### Recommended: Adafruit nRF52 BSP via the Arduino Board Manager
+### Recommended: NARC nRF52 BSP via the Arduino Board Manager
 
  1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software) (At least v1.6.12)
  2. Start the Arduino IDE
@@ -20,7 +19,7 @@ There are two methods that you can use to install this BSP. We highly recommend 
  6. Open the Boards Manager from the Tools -> Board menu and install 'Adafruit nRF52 by Adafruit'
  7. Once the BSP is installed, select 'Adafruit Bluefruit nRF52 Feather' from the Tools -> Board menu, which will update your system config to use the right compiler and settings for the nRF52.
 
-### Optional (Core Development): Adafruit nRF52 BSP via git
+### Optional (Core Development): NARC nRF52 BSP via git
 
  1. Install BSP via Board Manager as above to install compiler & tools.
  2. Delete the core folder `nrf52` installed by Board Manager in Adruino15, depending on your OS. It could be
@@ -32,7 +31,7 @@ There are two methods that you can use to install this BSP. We highly recommend 
   * Linux  : `~/Arduino`
   * Windows: `~/Documents/Arduino`
  4. Create a folder named `hardware/Adafruit`, if it does not exist, and change directories to it
- 5. Clone this repo: `git clone https://github.com/adafruit/Adafruit_nRF52_Arduino.git`
+ 5. Clone this repo: `git clone https://github.com/maddogjt/NARC_nRF52_Arduino.git`
  6. Restart the Arduino IDE
  7. Once the BSP is installed, select 'Adafruit Bluefruit nRF52 Feather' from the Tools -> Board menu, which will update your system config to use the right compiler and settings for the nRF52.
 
@@ -143,7 +142,8 @@ but enter the `MSDEnable` command.
 
 ## Credits
 
-This core is based on [Arduino-nRF5](https://github.com/sandeepmistry/arduino-nRF5) by Sandeep Mistry,
+This core is based on [Adafruit-nRF52](https://github.com/adafruit/Adafruit_nRF52_Ardunio)
+[Arduino-nRF5](https://github.com/sandeepmistry/arduino-nRF5) by Sandeep Mistry,
 which in turn is based on the [Arduino SAMD Core](https://github.com/arduino/ArduinoCore-samd).
 
 The following libraries are used:

@@ -1,6 +1,15 @@
-# Adafruit nRF52 Arduino Core Changelog
+# NARC nRF52 Arduino Core Changelog
 
-# 0.9.3
+# 0.1.0
+
+- Fork Adafruit arduino core for NARC amulet.
+- Add initial support for amulet proto0 board
+- Trim BLE libray to scan and advertise functionality (reduces by 20k)
+
+
+# Version history for Adafruit core
+
+## 0.9.3
 
 - Correct bootloader version text in IDE to 0.2.6
 - Fixed #173 bleuart return incorrect value when failed to send (PR #178 thanks Nenik)

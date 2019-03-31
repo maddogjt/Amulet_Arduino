@@ -22,7 +22,7 @@ extern const SEGGER_SYSVIEW_OS_API SYSVIEW_X_OS_TraceAPI;
 **********************************************************************
 */
 // The application name to be displayed in SystemViewer
-#define SYSVIEW_APP_NAME        "Adafruit Bluefruit"
+#define SYSVIEW_APP_NAME        "NARC nRF52"
 
 // The target device name
 #define SYSVIEW_DEVICE_NAME     "nRF52"
