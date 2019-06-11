@@ -19,23 +19,56 @@
 */
 
 #include "variant.h"
+
 #include "wiring_constants.h"
 #include "wiring_digital.h"
 #include "nrf.h"
 
-const uint32_t g_ADigitalPinMap[] =
-{
-  // P0
-  0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 ,
-  8 , 9 , 10, 11, 12, 13, 14, 15,
-  16, 17, 18, 19, 20, 21, 22, 23,
-  24, 25, 26, 27, 28, 29, 30, 31,
+const uint32_t g_ADigitalPinMap[] = {
+  // D0 - D7
+  0,  // xtal 1
+  1,  // xtal 2
+  2,  // a0
+  3,  // a1
+  4,  // a2
+  5,  // a3
+  6,  // TXD
+  7,  // GPIO #7
 
-  // P1
-  32, 33, 34, 35, 36, 37, 38, 39,
-  40, 41, 42, 43, 44, 45, 46, 47
+  // D8 - D13
+  8,  // RXD
+
+  9,  // NFC1
+  10, // NFC2
+
+  11, // GPIO11
+
+  12, // SCK
+  13, // MOSI
+  14, // MISO
+
+  15, // GPIO #15
+  16, // GPIO #16
+
+  // function set pins
+  17, // LED #1 (red)
+  18, // SWO
+  19, // LED #2 (blue)
+  20, // DFU
+  21, // Reset
+  22, // Factory Reset
+  23, // N/A
+  24, // N/A
+
+  25, // SDA
+  26, // SCL
+  27, // GPIO #27
+  28, // A4
+  29, // A5
+  30, // A6
+  31, // A7
+
 };
-
 
 void initVariant()
 {
@@ -43,13 +76,13 @@ void initVariant()
   pinMode(PIN_LED1, OUTPUT);
   ledOff(PIN_LED1);
 
-  pinMode(PIN_LED2, OUTPUT);
-  ledOff(PIN_LED2);
+  // pinMode(PIN_LED2, OUTPUT);
+  // ledOff(PIN_LED2);
 
-  pinMode(PIN_LED3, OUTPUT);
-  ledOff(PIN_LED3);
+  // pinMode(PIN_LED3, OUTPUT);
+  // ledOff(PIN_LED3);
 
-  pinMode(PIN_LED4, OUTPUT);
-  ledOff(PIN_LED4);
+  // pinMode(PIN_LED4, OUTPUT);
+  // ledOff(PIN_LED4);
 }
 

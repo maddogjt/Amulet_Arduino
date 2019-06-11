@@ -1,7 +1,7 @@
 #**********************************************
 # Jlink with nrfjprog
 #**********************************************
-nrfjprog.name=J-Link for Bluefruit nRF52
+nrfjprog.name=J-Link for Amulet
 nrfjprog.program.tool=bootburn
 nrfjprog.program.cmd={runtime.tools.nrfjprog.path}/nrfjprog
 nrfjprog.program.cmd.windows={runtime.tools.nrfjprog.path}/nrfjprog.exe
@@ -20,7 +20,7 @@ nrfjprog.program.pattern="{program.cmd}" --reset --program "{build.path}/{build.
 #**********************************************
 # adafruit-nrfutil
 #**********************************************
-nrfutil_boot.name=Bootloader DFU for Bluefruit nRF52
+nrfutil_boot.name=Bootloader DFU for Amulet
 nrfutil_boot.program.tool=bootburn
 nrfutil_boot.program.cmd=adafruit-nrfutil
 nrfutil_boot.program.cmd.windows={runtime.platform.path}/tools/adafruit-nrfutil/win32/adafruit-nrfutil.exe
