@@ -99,3 +99,43 @@ amulet_proto0.menu.debug.l2=Level 2 (Full Debug)
 amulet_proto0.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
 amulet_proto0.menu.debug.l3=Level 3 (Segger SystemView)
 amulet_proto0.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+
+# ----------------------------------
+# Amulet of Rune (MP)
+# ----------------------------------
+amulet_mp.name=Amulet of Rune
+amulet_mp.bootloader.tool=bootburn
+
+# Upload
+amulet_mp.upload.tool=nrfutil
+amulet_mp.upload.protocol=nrfutil
+amulet_mp.upload.use_1200bps_touch=false
+amulet_mp.upload.wait_for_upload_port=false
+amulet_mp.upload.native_usb=false
+amulet_mp.upload.maximum_size=290816
+amulet_mp.upload.maximum_data_size=51072
+
+# Build
+amulet_mp.build.mcu=cortex-m4
+amulet_mp.build.f_cpu=64000000
+amulet_mp.build.board=AMULET_MP
+amulet_mp.build.core=nRF5
+amulet_mp.build.variant=amulet_mp
+amulet_mp.build.extra_flags=-DNRF52832_XXAA -DNRF52 -DARDUINO_NRF52_FEATHER
+amulet_mp.build.ldscript=nrf52832_s132_v6.ld
+
+# SofDevice Menu
+amulet_mp.menu.softdevice.s132v6=0.2.11 SoftDevice s132 6.1.1
+amulet_mp.menu.softdevice.s132v6.build.sd_name=s132
+amulet_mp.menu.softdevice.s132v6.build.sd_version=6.1.1
+amulet_mp.menu.softdevice.s132v6.build.sd_fwid=0x00B7
+
+# Debug Menu
+amulet_mp.menu.debug.l0=Level 0 (Release)
+amulet_mp.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+amulet_mp.menu.debug.l1=Level 1 (Error Message)
+amulet_mp.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+amulet_mp.menu.debug.l2=Level 2 (Full Debug)
+amulet_mp.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+amulet_mp.menu.debug.l3=Level 3 (Segger SystemView)
+amulet_mp.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
