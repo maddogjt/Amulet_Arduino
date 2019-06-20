@@ -45,6 +45,10 @@ extern "C"
 #define PIN_RGB_LEDS         (26u)
 #define RGB_LED_COUNT        (8)
 
+// Pin used to enable voltage rail for RGB LEDs
+#define PIN_RGB_LED_PWR       (5u)
+#define RGB_LED_PWR_ON        (0)      // State to enable RGB led voltage rail
+
 // LEDs
 #define PIN_LED1             (8)
 
@@ -53,6 +57,9 @@ extern "C"
 #define LED_BLUE             PIN_LED1
 
 #define LED_STATE_ON         0         // State when LED is litted
+
+#define PIN_DFU             (27u)
+#define PIN_RESET           (20u)
 
 /*
  * Analog pins
