@@ -238,13 +238,18 @@ def run(snr=None):
         segments = parse_file(args.write_signed)
 
         if len(list(segments)) != 1:
-            raise ValueError('Signed images may only contain one segment {} contains {}'.format(args.write_signed, len(list(segments))))
+            for segment in segments:
+                   print('# 0x{:08x} - 0x{:08x} ({} bytes)'.format(segment.address, segment.address + segment.length, segment.length))
+           # raise ValueError('Signed images may only contain one segment {} contains {}'.format(args.write_signed, len(list(segments))))
         
         # Program the parsed hex into the device's memory.
+        data=[]
         for segment in segments:
-                flash_regions.append(segment)
-                signature = create_app_signature(segment.data)
-                flash_regions.append(Hex.Segment(0x7f000, signature))
+            flash_regions.append(segment)
+            data += segment.data
+        
+        signature = create_app_signature(data)
+        flash_regions.append(Hex.Segment(0x7f000, signature))
 
     flash_regions.sort(key=lambda s: s.address)
     for segment in flash_regions:
