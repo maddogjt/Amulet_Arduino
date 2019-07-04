@@ -59,7 +59,7 @@ extern "C"
 #define LED_STATE_ON         0         // State when LED is litted
 
 #define PIN_DFU             (27u)
-#define PIN_RESET           (20u)
+#define PIN_RESET           (21u)
 
 /*
  * Analog pins
