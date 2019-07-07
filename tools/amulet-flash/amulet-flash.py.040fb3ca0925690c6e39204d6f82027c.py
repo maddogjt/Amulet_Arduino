@@ -365,10 +365,10 @@ if __name__ == '__main__':
                         action='store_true',
                         default=False,
                         help='Repeat programming')
-    parser.add_argument('--keypress',
+	    parser.add_argument('--repeat',
                         action='store_true',
                         default=False,
-                        help='Press a key to program programming')
+                        help='Repeat programming')
     args = parser.parse_args()
     run()
 
