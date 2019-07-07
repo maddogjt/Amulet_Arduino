@@ -123,7 +123,7 @@ static void nrf_error_cb(uint32_t id, uint32_t pc, uint32_t info)
 	}
 
 	Serial.println("Resetting due to BLE assertion");
-	sd_nvic_SystemReset();
+	NVIC_SystemReset();
 
 	while (1)
 	{
