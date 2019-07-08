@@ -166,6 +166,7 @@ def detect_device(api, timeout=None, ignore_device_id=None):
                     print('found {}'.format(current_device_id))
                     return current_device_id
                 else:
+                    api.go()
                     api.disconnect_from_device()
         except:
             pass
@@ -186,9 +187,9 @@ def connect_to_emulator(api, timeout=None, serial_number=None):
     while timeout == None or (time.time() - start_time) <= timeout:
         try:
             if serial_number is not None:
-                api.connect_to_emu_with_snr(serial_number)
+                api.connect_to_emu_with_snr(serial_number, jlink_speed_khz=4000)
             else:
-                api.connect_to_emu_without_snr()
+                api.connect_to_emu_without_snr(jlink_speed_khz=4000)
 
             print("success")
             return api.is_connected_to_emu()
@@ -302,9 +303,9 @@ def run(snr=None):
             api.disconnect_from_emu()
             continue
 
-        print('Waiting 1 seconds to start programming')
+        print('Waiting 0.5 seconds to start programming')
 
-        time.sleep(1)
+        time.sleep(0.5)
 
         try:
             # # Erase all the flash of the device.
@@ -328,10 +329,17 @@ def run(snr=None):
         api.disconnect_from_device()
         api.disconnect_from_emu()
 
+
         last_device_id = current_device_id
+
+
 
         if not args.repeat:
             break
+
+        print('Waiting 5 seconds before starting next cycle programming')
+
+        time.sleep(5)
 
     # Close the loaded DLL to free resources.
     api.close()
