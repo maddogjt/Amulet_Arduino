@@ -42,6 +42,9 @@ extern "C"
 #define NUM_ANALOG_INPUTS    (8u)
 #define NUM_ANALOG_OUTPUTS   (0u)
 
+#define RGB_LED_COUNT (8)
+#define NO_RGB_LEDS
+
 // LEDs
 #define PIN_LED1             (17)
 #define PIN_LED2             (19)
@@ -81,6 +84,9 @@ static const uint8_t A7  = PIN_A7 ;
 #define PIN_VBAT           PIN_A7
 #define PIN_NFC1           (9)
 #define PIN_NFC2           (10)
+
+#define PIN_DFU (20u)
+#define PIN_RESET (21u)
 
 static const uint8_t AREF = PIN_AREF;
 

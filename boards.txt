@@ -42,12 +42,19 @@ feather52832.build.core=nRF5
 feather52832.build.variant=feather_nrf52832
 feather52832.build.extra_flags=-DNRF52832_XXAA -DNRF52 -DARDUINO_NRF52_FEATHER
 feather52832.build.ldscript=nrf52832_s132_v6.ld
+feather52832.build.dev_type=0xA137
 
 # SofDevice Menu
 feather52832.menu.softdevice.s132v6=1.0.0 SoftDevice s132 6.1.1
 feather52832.menu.softdevice.s132v6.build.sd_name=s132
 feather52832.menu.softdevice.s132v6.build.sd_version=6.1.1
 feather52832.menu.softdevice.s132v6.build.sd_fwid=0x00B7
+
+feather52832.menu.softdevice.adafs132v6=Adafruit SoftDevice s132 6.1.1
+feather52832.menu.softdevice.adafs132v6.build.sd_name=s132
+feather52832.menu.softdevice.adafs132v6.build.sd_version=6.1.1
+feather52832.menu.softdevice.adafs132v6.build.sd_fwid=0x00B7
+feather52832.menu.softdevice.adafs132v6.build.dev_type=0x0052
 
 # Debug Menu
 feather52832.menu.debug.l0=Level 0 (Release)
@@ -83,6 +90,7 @@ amulet_proto0.build.core=nRF5
 amulet_proto0.build.variant=amulet_proto0
 amulet_proto0.build.extra_flags=-DNRF52832_XXAA -DNRF52 -DARDUINO_NRF52_FEATHER
 amulet_proto0.build.ldscript=nrf52832_s132_v6.ld
+amulet_proto0.build.dev_type=0xA137
 
 # SofDevice Menu
 amulet_proto0.menu.softdevice.s132v6=1.0.0s SoftDevice s132 6.1.1
@@ -123,6 +131,7 @@ amulet_mp.build.core=nRF5
 amulet_mp.build.variant=amulet_mp
 amulet_mp.build.extra_flags=-DNRF52832_XXAA -DNRF52 -DARDUINO_NRF52_FEATHER
 amulet_mp.build.ldscript=nrf52832_s132_v6.ld
+amulet_mp.build.dev_type=0xA137
 
 # SofDevice Menu
 amulet_mp.menu.softdevice.s132v6=1.0.0s SoftDevice s132 6.1.1
