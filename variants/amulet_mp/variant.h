@@ -57,6 +57,9 @@ extern "C"
 
 #define LED_BLUE             PIN_LED1
 
+// Don't use this.  Only here to keep compat with some test sketches
+#define LED_RED              LED_BLUE
+
 #define LED_STATE_ON         0         // State when LED is litted
 
 /*

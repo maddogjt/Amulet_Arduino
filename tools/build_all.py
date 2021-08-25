@@ -40,11 +40,15 @@ def build_examples(variant):
     print(build_format.format('Library', 'Example', '\033[39mResult\033[0m', 'Time'))
     print(build_separator)
     
-    fqbn = "adafruit:nrf52:{}:softdevice={},debug=l0".format(variant, 's140v6' if variant != 'feather52832' else 's132v6')
+    fqbn = "narc:amulet:{}:softdevice={},debug=l0".format(variant, 's140v6' if (variant != 'feather52832' and variant != 'amulet_mp') else 's132v6')
 
     for sketch in all_examples:
         # skip TinyUSB library examples for nRF52832
-        if variant == 'feather52832' and "libraries/Adafruit_TinyUSB_Arduino" in sketch:
+        if (variant == 'feather52832' or variant == 'amulet_mp') and "libraries/Adafruit_TinyUSB_Arduino" in sketch:
+            continue
+
+        # skip Adafruit_nRFCrypto library examples for nRF52832
+        if (variant == 'feather52832' or variant == 'amulet_mp') and "libraries/Adafruit_nRFCrypto" in sketch:
             continue
 
         start_time = time.monotonic()

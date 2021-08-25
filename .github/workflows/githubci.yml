@@ -9,12 +9,13 @@ jobs:
       matrix:
         arduino-platform:
         # Alphabetical order
-        - 'cluenrf52840'
-        - 'cplaynrf52840'
+        - 'amulet_mp'
+        # - 'cluenrf52840'
+        # - 'cplaynrf52840'
         - 'feather52832'
-        - 'feather52840'
-        - 'feather52840sense'
-        - 'itsybitsy52840'
+        # - 'feather52840'
+        # - 'feather52840sense'
+        # - 'itsybitsy52840'
 
     runs-on: ubuntu-latest
     
@@ -43,7 +44,7 @@ jobs:
     - name: Install BSP and Libraries
       env:
         BSP_URL: https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
-        BSP_PATH: .arduino15/packages/adafruit/hardware/nrf52
+        BSP_PATH: .arduino15/packages/narc/hardware/amulet
       run: |
         arduino-cli config init
         arduino-cli core update-index
@@ -51,8 +52,9 @@ jobs:
         arduino-cli core install adafruit:nrf52 --additional-urls $BSP_URL
 
         # Repalce release BSP with our code
-        BSP_VERSION=`eval ls $HOME/$BSP_PATH`
-        rm -r $HOME/$BSP_PATH/*
+        BSP_VERSION=1.0
+        mkdir -p $HOME/$BSP_PATH/
+        # rm -r $HOME/$BSP_PATH/*
         ln -s $GITHUB_WORKSPACE $HOME/$BSP_PATH/$BSP_VERSION
 
         # Install library dependency
