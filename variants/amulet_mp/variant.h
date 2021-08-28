@@ -67,7 +67,7 @@ extern "C"
  */
 
 #define PIN_DFU             (27u)
-#define PIN_RESET           (21u)
+#define PIN_RESET           (20u)
 
 /*
  * Analog pins
@@ -103,8 +103,8 @@ static const uint8_t AREF = PIN_AREF;
  * Serial interfaces
  */
 // Arduino Header D0, D1
-#define PIN_SERIAL_RX       (33)
-#define PIN_SERIAL_TX       (34)
+#define PIN_SERIAL_RX       (18)
+#define PIN_SERIAL_TX       (19)
 
 // Connected to Jlink CDC
 // #define PIN_SERIAL2_RX      (8)
@@ -130,6 +130,9 @@ static const uint8_t SCK  = PIN_SPI_SCK ;
 
 #define PIN_WIRE_SDA         (25u)
 #define PIN_WIRE_SCL         (26u)
+
+#define FASTLED_NRF52_SUPPRESS_UNTESTED_BOARD_WARNING
+#define ARDUINO_GENERIC 
 
 #ifdef __cplusplus
 }

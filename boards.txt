@@ -580,7 +580,7 @@ amulet_mp.build.core=nRF5
 amulet_mp.build.variant=amulet_mp
 amulet_mp.build.usb_manufacturer="Adafruit LLC"
 amulet_mp.build.usb_product="Amulet of Rune"
-amulet_mp.build.extra_flags=-DNRF52832_XXAA -DNRF52
+amulet_mp.build.extra_flags=-DNRF52832_XXAA -DNRF52 '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
 amulet_mp.build.ldscript=nrf52832_s132_v6.ld
 amulet_mp.build.dev_type=0xA137
 amulet_mp.build.bootloader_ver=1.1.0
