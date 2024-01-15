@@ -67,7 +67,7 @@ extern "C"
  */
 
 #define PIN_DFU             (27u)
-#define PIN_RESET           (20u)
+#define PIN_RESET           (21u)
 
 /*
  * Analog pins
