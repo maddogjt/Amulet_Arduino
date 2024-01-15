@@ -4,6 +4,7 @@ import sys
 import time
 import traceback
 import readchar
+import os
 
 # Import pynrfjprog API module
 from pynrfjprog import API, Hex
@@ -378,6 +379,13 @@ if __name__ == '__main__':
                         default=False,
                         help='Press a key to program programming')
     args = parser.parse_args()
-    run()
+    try:
+        run()
+    except KeyboardInterrupt:
+        print('Interrupted')
+        try:
+            sys.exit(130)
+        except SystemExit:
+            os._exit(130)
 
 
